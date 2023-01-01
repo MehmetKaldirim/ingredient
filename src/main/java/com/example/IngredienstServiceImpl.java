@@ -1,4 +1,4 @@
-package com.example.ingredient;
+package com.example;
 
 import org.springframework.stereotype.Service;
 
@@ -51,9 +51,9 @@ public class IngredienstServiceImpl implements IngredienstService{
         ingredienstRepository.save(ingredienst);
 }
     @Override
-    public IngredienstDTO getById(Long id){
-        Ingredienst ingredienst = ingredienstRepository.findById(id).get();
-        IngredienstDTO convertedIngredienstDTO = mapperUtil.convert(ingredienst, new IngredienstDTO());
-        return convertedIngredienstDTO;
+    public List<IngredienstDTO> getByTitle(String  title){
+        List<Ingredienst> ingredients = ingredienstRepository.getByTitle(title);
+        List<IngredienstDTO> listDto = ingredients.stream().map(every->mapperUtil.convert(every, new IngredienstDTO())).collect(Collectors.toList());
+        return  listDto;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.ingredient;
+package com.example;
 
 
 
@@ -31,9 +31,9 @@ public class IngredienstController {
     }
 
 
-    @GetMapping("/{id}")
-    public ResponseEntity<ResponseWrapper> getIngredientById(@PathVariable("id") Long id) {
-        IngredienstDTO dto = ingredienstService.getById(id);
+    @GetMapping("/{title}")
+    public ResponseEntity<ResponseWrapper> getIngredientByTitle(@PathVariable("title") String title) {
+        List<IngredienstDTO> dto = ingredienstService.getByTitle(title);
         return ResponseEntity.ok(new ResponseWrapper("Program is successfully retrieved", dto, HttpStatus.OK));
     }
 

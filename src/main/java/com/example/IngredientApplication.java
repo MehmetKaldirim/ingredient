@@ -1,4 +1,4 @@
-package com.example.ingredient;
+package com.example;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;

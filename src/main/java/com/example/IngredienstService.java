@@ -1,4 +1,4 @@
-package com.example.ingredient;
+package com.example;
 
 import java.util.List;
 
@@ -11,5 +11,5 @@ public interface IngredienstService {
     Ingredienst update(IngredienstDTO dto);
     void delete(Long id);
 
-    IngredienstDTO getById(Long id);
+    List<IngredienstDTO> getByTitle(String title);
 }
