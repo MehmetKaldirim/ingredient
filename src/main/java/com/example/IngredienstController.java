@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/ingredienst/api/v1")
+@RequestMapping("/ingredients/api/v3")
 public class IngredienstController {
 
     private final IngredienstService ingredienstService;

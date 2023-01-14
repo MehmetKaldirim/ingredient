@@ -20,6 +20,7 @@ public class IngredienstServiceImpl implements IngredienstService{
     public List<IngredienstDTO> listAllIngredienst() {
         List<IngredienstDTO> ingredienstDTO = ingredienstRepository.findAll().stream()
                 .map(ingredienst->mapperUtil.convert(ingredienst,new IngredienstDTO()))
+                .filter(a->a.getIsDeleted()== false)
                 .collect(Collectors.toList());
         return ingredienstDTO;
     }
